@@ -19,12 +19,12 @@ async def contact(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
 
 async def sendfile(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
     temp_file = tempfile.NamedTemporaryFile(delete=False, mode='w')
-    tmp_filename = 'test 3939.pdf'
+    tmp_filename = 'ex_doc/test 39398.pdf'
     document = open(tmp_filename, 'rb')
     await update.message.reply_document(document=document)
 
-app = ApplicationBuilder().token("6320416802:AAEFPX1kePXFNt8o-ohSvtzINdsFaNrpOps").build()
-# app = ApplicationBuilder().token("6544544911:AAFYAqDxGq-rdbmZAZMzmnIL-iwR8clV8ak").build()
+app = ApplicationBuilder().token("6320416802:AAEFPX1kePXFNt8o-ohSvtzINdsFaNrpOps").build() # FATHUR BOT  
+# app = ApplicationBuilder().token("6544544911:AAFYAqDxGq-rdbmZAZMzmnIL-iwR8clV8ak").build() # SISFO UNIDAYAN BOT 
 
 app.add_handler(CommandHandler("start", start))
 app.add_handler(CommandHandler("help", help))
