@@ -23,8 +23,8 @@ async def sendfile(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
     document = open(tmp_filename, 'rb')
     await update.message.reply_document(document=document)
 
-# app = ApplicationBuilder().token("6320416802:AAEFPX1kePXFNt8o-ohSvtzINdsFaNrpOps").build()
-app = ApplicationBuilder().token("6544544911:AAFYAqDxGq-rdbmZAZMzmnIL-iwR8clV8ak").build()
+app = ApplicationBuilder().token("6320416802:AAEFPX1kePXFNt8o-ohSvtzINdsFaNrpOps").build()
+# app = ApplicationBuilder().token("6544544911:AAFYAqDxGq-rdbmZAZMzmnIL-iwR8clV8ak").build()
 
 app.add_handler(CommandHandler("start", start))
 app.add_handler(CommandHandler("help", help))
