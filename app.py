@@ -20,6 +20,7 @@ async def contact(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
 async def sendfile(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
     temp_file = tempfile.NamedTemporaryFile(delete=False, mode='w')
     tmp_filename = 'ex_doc/test 39398.pdf'
+    # tmp_filename = 'test 3939.pdf'
     document = open(tmp_filename, 'rb')
     await update.message.reply_document(document=document)
 
