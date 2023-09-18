@@ -16,10 +16,18 @@ async def help(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
 async def contact(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
     await update.message.reply_text(f"""Instagram : sir.n3wt0n_ Current User : {update.effective_user.id} 
     User Name : {update.effective_user.full_name}""")
+    
+async def test(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
+    params = "".join(context.args)
+    await update.message.reply_text(f"""Instagram : sir.n3wt0n_ Current User : {update.effective_user.id} 
+    User Name : {update.effective_user.full_name}, params : {params}""")
 
 async def sendfile(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
     temp_file = tempfile.NamedTemporaryFile(delete=False, mode='w')
-    tmp_filename = 'ex_doc/test 39398.pdf'
+    params = " ".join(context.args)
+    tmp_filename = 'ex_doc/' + params + '.pdf'
+    
+    # tmp_filename = 'ex_doc/test 39398.pdf'
     # tmp_filename = 'test 3939.pdf'
     document = open(tmp_filename, 'rb')
     await update.message.reply_document(document=document)
@@ -31,5 +39,6 @@ app.add_handler(CommandHandler("start", start))
 app.add_handler(CommandHandler("help", help))
 app.add_handler(CommandHandler("contact", contact))
 app.add_handler(CommandHandler("sendfile", sendfile))
+app.add_handler(CommandHandler("test", test))
 
 app.run_polling()
